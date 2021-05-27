@@ -104,12 +104,7 @@ class Post extends React.Component {
         <Head>
           <title>{post.title}</title>
 
-          <meta
-            property="og:image"
-            content={
-              "https://bazar-247.s3.us-east-2.amazonaws.com/16144121240101001-94-ah.jpg"
-            }
-          />
+          <meta property="og:image" content={post.mainImage} />
           <meta property="og:type" content="website" />
           <meta property="og:title" content={post.title} />
           <meta property="og:description" content={post.title} />
@@ -126,7 +121,7 @@ class Post extends React.Component {
             content={"https://main--pensive-bose-e5a231.netlify.app/"}
           ></meta>
           <meta property="twitter:description" content={post.title} />
-          <meta property="twitter:image" content={post.thumbnailUrl} />
+          <meta property="twitter:image" content={post.mainImage} />
           <meta name="title" property="og:title" content={post.title} />
         </Head>
         <ul>
@@ -136,7 +131,7 @@ class Post extends React.Component {
                     ))} */}
         </ul>
         <img
-          src={this.props.post.thumbnailUrl}
+          src={this.props.post.mainImage}
           alt="chat avatar"
           height="400"
           width="400"
@@ -148,7 +143,9 @@ class Post extends React.Component {
 
 export const getStaticPaths = async () => {
   // Call an external API endpoint to get posts
-  const res = await fetch("https://jsonplaceholder.typicode.com/photos");
+  const res = await fetch(
+    "https://api-stage.gobazar247.com/v1/products/getAllProducts"
+  );
   const posts = await res.json();
 
   const result = posts.map((post) => ({
@@ -165,7 +162,7 @@ export const getStaticPaths = async () => {
 // This also gets called at build time
 export const getStaticProps = async ({ params }) => {
   const res = await fetch(
-    `https://jsonplaceholder.typicode.com/photos/${params.id}`
+    `https://api-stage.gobazar247.com/v1/products/${params.id}`
   );
   const post = await res.json();
 
