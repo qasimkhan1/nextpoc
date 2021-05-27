@@ -104,7 +104,12 @@ class Post extends React.Component {
         <Head>
           <title>{post.title}</title>
 
-          <meta property="og:image" content={post.thumbnailUrl} />
+          <meta
+            property="og:image"
+            content={
+              "https://bazar-247.s3.us-east-2.amazonaws.com/16144121240101001-94-ah.jpg"
+            }
+          />
           <meta property="og:type" content="website" />
           <meta property="og:title" content={post.title} />
           <meta property="og:description" content={post.title} />
@@ -112,7 +117,8 @@ class Post extends React.Component {
             property="og:url"
             content={"https://main--pensive-bose-e5a231.netlify.app/"}
           ></meta>
-
+          <meta property="og:image:width" content="400" />
+          <meta property="og:image:height" content="300" />
           <meta property="twitter:card" content="summary_large_image" />
           <meta property="twitter:title" content={post.title} />
           <meta
