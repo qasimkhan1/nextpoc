@@ -11,7 +11,9 @@ export default function Home() {
         <meta
           name="og:image"
           property="og:image"
-          content={"https://via.placeholder.com/150/8985dc"}
+          content={
+            "https://bazar-247.s3.us-east-2.amazonaws.com/16144121240101001-94-ah.jpg"
+          }
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
