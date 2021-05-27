@@ -148,8 +148,8 @@ export const getStaticPaths = async () => {
   );
   const posts = await res.json();
 
-  const result = posts.map((post) => ({
-    params: { id: JSON.stringify(post.id) },
+  const result = posts.results.map((post) => ({
+    params: { id: post.id },
   }));
 
   let paths = [...result];
