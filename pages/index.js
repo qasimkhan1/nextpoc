@@ -15,6 +15,8 @@ export default function Home() {
             "https://bazar-247.s3.us-east-2.amazonaws.com/16144121240101001-94-ah.jpg"
           }
         />
+        <meta property="og:image:width" content="400" />
+        <meta property="og:image:height" content="300" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
