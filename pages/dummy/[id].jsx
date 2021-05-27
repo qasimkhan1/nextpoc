@@ -103,13 +103,25 @@ class Post extends React.Component {
       <div>
         <Head>
           <title>{post.title}</title>
-          <meta name="title" property="og:title" content={post.title} />
 
+          <meta property="og:image" content={post.thumbnailUrl} />
+          <meta property="og:type" content="website" />
+          <meta property="og:title" content={post.title} />
+          <meta property="og:description" content={post.title} />
           <meta
-            name="og:image"
-            property="og:image"
-            content={post.thumbnailUrl}
-          />
+            property="og:url"
+            content={"https://main--pensive-bose-e5a231.netlify.app/"}
+          ></meta>
+
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta property="twitter:title" content={post.title} />
+          <meta
+            property="twitter:url"
+            content={"https://main--pensive-bose-e5a231.netlify.app/"}
+          ></meta>
+          <meta property="twitter:description" content={post.title} />
+          <meta property="twitter:image" content={post.thumbnailUrl} />
+          <meta name="title" property="og:title" content={post.title} />
         </Head>
         <ul>
           <li>{this.props.post.title}</li>
