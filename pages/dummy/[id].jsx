@@ -156,7 +156,7 @@ export const getStaticPaths = async () => {
 
   console.log("paths", paths);
 
-  return { paths, fallback: false };
+  return { paths, fallback: "blocking" };
 };
 
 // This also gets called at build time
